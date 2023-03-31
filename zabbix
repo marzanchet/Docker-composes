@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  zabbix-server:
+    image: zabbix/zabbix-server-mysql:alpine-5.2-latest
+    environment:
+      - DB_SERVER_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=example
+      - MYSQL_DATABASE=zabbix
+    ports:
+      - "10051:10051"
+    depends_on:
+      - db
+
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-mysql:alpine-5.2-latest
+    environment:
+      - DB_SERVER_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=example
+      - MYSQL_DATABASE=zabbix
+      - PHP_TZ=America/New_York
+    ports:
+      - "80:8080"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=example
+      - MYSQL_DATABASE=zabbix
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  db_data:
