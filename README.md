@@ -14,11 +14,21 @@ To use these compose files, simply clone this repository to your local machine a
 
 Here are some of the Docker Compose files included in this collection:
 
-- `wordpress-mysql`: A setup for running WordPress with a MySQL database.
-- `nginx-php-fpm`: A setup for running a PHP web application with Nginx.
-- `laravel-postgres`: A setup for running a Laravel web application with a PostgreSQL database.
-- `search-replace-db`: A setup for running the Search Replace DB tool in a container.
-- `phpmyadmin`: A setup for running phpMyAdmin to manage MySQL databases.
+- **wordpress-mysql**: A setup for running WordPress with a MySQL database.
+- **nginx-php-fpm**: A setup for running a PHP web application with Nginx.
+- **laravel-postgres**: A setup for running a Laravel web application with a PostgreSQL database.
+- **search-replace-db**: A setup for running the Search Replace DB tool in a container.
+- **phpmyadmin**: A setup for running phpMyAdmin to manage MySQL databases.
+- **django-postgres**: A setup for running a Django web application with a PostgreSQL database.
+- **node-mongodb**: A setup for running a Node.js web application with a MongoDB database.
+- **traefik**: A setup for running the Traefik reverse proxy and load balancer.
+- **elk**: A setup for the ELK stack, a popular tool for log management and analysis.
+- **gitlab-ci**: A setup for running GitLab CI.
+- **azure-ci**: A setup for running Azure CI.
+- **zabbix**: A setup for running the Zabbix monitoring tool.
+- **uptime-kuma**: A setup for running the Uptime Kuma monitoring tool.
+- **jenkins-runner**: A setup for running Jenkins runners.
+- **gitlab-runner**: A setup for running GitLab runners.
 
 ## Contributing
 
