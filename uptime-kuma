@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  uptime-kuma:
+    image: uptime-kuma:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=example
+      - DB_NAME=uptime_kuma
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD
