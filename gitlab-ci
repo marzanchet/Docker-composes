@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  runner:
+    image: gitlab/gitlab-runner
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/etc/gitlab-runner
+    environment:
+      - REGISTER_NON_INTERACTIVE=true
+      - CI_SERVER_URL=https://gitlab.example.com/
+      - RUNNER_EXECUTOR=docker
+      - DOCKER_IMAGE=docker:latest
+      - DOCKER_PRIVILEGED=true
+      - DOCKER_RUN_PRIVILEGED=true
+
+volumes:
+  config:
