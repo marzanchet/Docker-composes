@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  azdevops-agent:
+    image: microsoft/azure-pipelines-agent:latest
+    environment:
+      - AZP_URL=https://dev.azure.com/myorg
+      - AZP_TOKEN=mytoken
+      - AZP_AGENT_NAME=myagent
+      - AZP_POOL=myagentpool
+
